@@ -6,9 +6,9 @@ import (
 )
 
 type Config struct {
-	Host   string `env:"API_HOST" envDefault:"0.0.0.0"`
-	Port   uint16 `env:"API_PORT" envDefault:"3000"`
-	GO_ENV string `env:"API_GO_ENV" envDefault:"production"`
+	Host   string `env:"HOST" envDefault:"0.0.0.0"`
+	Port   uint16 `env:"PORT" envDefault:"3000"`
+	GO_ENV string `env:"GO_ENV" envDefault:"production"`
 }
 
 func Parse(logger *zap.Logger) (*Config, error) {
