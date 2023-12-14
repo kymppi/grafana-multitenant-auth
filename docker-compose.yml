@@ -8,3 +8,12 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     network_mode: "host"
+    depends_on:
+      - auth-server
+  auth-server:
+    image: ghcr.io/kymppi/grafana-multitenant-auth:v1.0.1
+    network_mode: "host"
+    environment:
+      - PORT=3000
+      - JWT_ALLOWED_ISSUER=midka.dev
+      - JWT_SECRET_KEY=your-256-bit-secret
