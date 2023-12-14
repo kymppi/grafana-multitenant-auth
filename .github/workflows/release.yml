@@ -26,4 +26,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and publish
-        run: ko build . --base-import-paths --tags latest,${{ github.event.release.tag_name }}
+        run: ko build . --bare --tags latest,${{ github.event.release.tag_name }}
